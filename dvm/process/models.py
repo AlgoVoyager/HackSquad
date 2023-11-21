@@ -14,5 +14,5 @@ class voter_Details(models.Model):
         verbose_name = 'voter'
         verbose_name_plural = 'voters'
 
-    def __str__(self):
-        return '{}'.format(self.name)
+    # def __str__(self):
+    #     return '{}'.format(self.name)
