@@ -16,3 +16,10 @@ class voter_Details(models.Model):
 
     # def __str__(self):
     #     return '{}'.format(self.name)
+
+class oppositons(models.Model):
+    op_id = models.CharField(primary_key=True,max_length=20)
+    party_name= models.CharField(max_length=255)
+    candidate_name= models.CharField(max_length=255)
+    vote_count= models.IntegerField()
+
