@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+header {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+main {
+    text-align: center;
+}
+
+.election-info {
+    margin-top: 0%;
+    margin-bottom: 30px;
+    background-color: lightgray;
+    
+}
+.button{
+    width: 85px;height: 37px; font-size: 20px;color: white; background-color: rgb(60, 81, 220); border-radius: 15px;
+}
+.section {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+.section1 {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgb(255, 166, 0);
+}
+.section2 {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: green;
+}
+.candidate {
+    display: inline-block;
+    margin: 10px;
+}
+.candidate img {
+    max-width: 150px;
+    border-radius: 8px;
+}
+.vote-button {
+    padding: 10px 20px;
+    font-size: 16px;
+}

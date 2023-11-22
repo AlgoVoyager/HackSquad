@@ -12,6 +12,7 @@ def verify(request):
                 messages.error(request, 'Already Voted.')
             else:
                 return render(request, "process/voting.html")
+                # return render(request, "process/voting.html")
         else:
             messages.error(request, 'Invalid Voterid')
     return render(request,'process/verify.html')
