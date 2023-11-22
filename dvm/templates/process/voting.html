@@ -1,4 +1,3 @@
-{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -48,9 +47,7 @@ main {
 
     <div class="container">
         <div id="card-alert" class="card light-blue lighten-5">
-            <!--                      <div class="card-content light-blue-text">-->
-            <!--                        <p id="loc_info">NEWS : You have done 5 actions.</p>-->
-            <!--                      </div>-->
+
             <h5>Welcome to the Voting Page, {{ voter_id }}!</h5>
         </div>
         <table>
@@ -58,7 +55,7 @@ main {
 
             <thead>
             <tr>
-                <!--              <th>Election Symbol</th>-->
+
                 <th>Party</th>
                 <th>Candidate Name</th>
                 <th>Vote</th>
@@ -84,38 +81,7 @@ main {
 
             </div>
             {% endfor %}
-            <!--          <tr>-->
-            <!--          	-->
-            <!--          	<td><img src="bjp.png" alt=" "height="42" width="42"></td>-->
-            <!--          	<td>Bharatiya Janata Party</td>-->
-            <!--            <td id="cand1">Sanat Taori</td>-->
-            <!--            <td ><button id="vote1" class="btn waves-effect waves-light" type="submit" name="action">Vote-->
-            <!--  </button></td>-->
-            <!--          </tr>-->
-            <!--          <tr>-->
-            <!--            <td><img src="cong.png" alt=" "height="42" width="42"></td>-->
-            <!--            <td>Indian National Congress</td>-->
-            <!--            <td id="cand2">Aniket Narkhede</td>-->
-            <!--            <td><button id="vote2"  class="btn waves-effect waves-light" type="submit" name="action">Vote-->
-            <!--    -->
-            <!--  </button></td>-->
-            <!--          </tr>-->
-            <!--          <tr>-->
-            <!--            <td><img src="rsc.png" alt=" "height="42" width="42"></td>-->
-            <!--            <td>Nationalist Congress Party</td>-->
-            <!--            <td id="cand3">Mandar Patil</td>-->
-            <!--            <td><button id="vote3"  class="btn waves-effect waves-light" type="submit" name="action">Vote-->
-            <!--    -->
-            <!--  </button></td>-->
-            <!--          </tr>-->
-            <!--          <tr>-->
-            <!--            <td><img src="/shiv.png" alt=" "height="42" width="42"></td>-->
-            <!--             <td>Shiv Sena</td>-->
-            <!--            <td id="cand4">Akshay Motghare</td>-->
-            <!--            <td><button id="vote4" class="btn waves-effect waves-light" type="submit" name="action">Vote-->
-            <!--    -->
-            <!--  </button></td>-->
-            <!--          </tr>-->
+
             </tbody>
         </table>
     </div>

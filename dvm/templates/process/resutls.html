@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resutls</title>
+    <style>
+        body{background-color:lightgrey}
+        table{width:50vh}
+    th{padding:20px;
+    background-color:orange}
+    td{padding:10px;
+    background-color:lightgreen}
+        div{display:flex;justify-content:center;align-items:center;flex-direction:column}
+    </style>
+
+
+</head>
+<body>
+<div>
+<h4>Voting Results</h4>
+    {% if checkk.checkk %}
+
+    {% endif %}
+  <table>
+
+
+            <thead>
+            <tr>
+
+                <th>Party</th>
+                <th>Candidate Name</th>
+                <th>Vote Count</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for opposition in opposition_list %}
+            <tr>
+                <td>{{ opposition.party_name }}</td>
+                <td>{{ opposition.candidate_name}}</td>
+                <td>
+                    {{ opposition.vote_count }}
+                </td>
+
+            </tr>
+            <div>
+
+            </div>
+            {% endfor %}
+
+            </tbody>
+        </table>
+</div>
+</body>
+</html>

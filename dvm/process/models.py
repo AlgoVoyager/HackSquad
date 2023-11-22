@@ -26,4 +26,9 @@ class oppositions(models.Model):
     def _str_(self):
         return self.c_party
 
+class voteends(models.Model):
+    checkk=False
+    def __str__(self):
+        return self.checkk
+
 

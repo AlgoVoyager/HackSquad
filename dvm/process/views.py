@@ -25,16 +25,22 @@ def vote(request):
         voter = get_object_or_404(voter_Details, voter_id=voter_id)
         opposition = get_object_or_404(oppositions, op_id=opposition_id)
         # Mark the voter as voted
-        opposition.vote_count += 1
-        opposition.save()
-        voter.is_voted = True
-        voter.save()
-        return HttpResponse("voted "+voter_id)
-        # return render(request, "process/voting.html")
+        if not voter.is_voted:
+            opposition.vote_count += 1
+            opposition.save()
+            voter.is_voted = True
+            voter.save()
+            return HttpResponse("voted "+voter_id)
+        else:
+            messages.error(request, 'Already Voted.')
+            return redirect( verify)
 
     return redirect('verify')
 def index(request):
     return render(request,'home/index.html')
 
 
-
+def results(request):
+    opposition_list = oppositions.objects.all()
+    checkk=voteends.objects.all()
+    return render(request,'process/resutls.html',{'opposition_list': opposition_list,'checkk':checkk})
