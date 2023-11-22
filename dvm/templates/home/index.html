@@ -69,6 +69,8 @@ main {
         a{
         text-decoration:none
         }
+        #results{
+        display:none}
     </style>
 </head>
 <body>
@@ -100,10 +102,49 @@ main {
             <p><b>Step 1</b>: Click on the above verify button, it will redirect you on verification page. <br> <br> <b>Step 2</b>: Enter your VoterId to get verified for voting. <br> <br> <b>Step 3</b>: After successfull verification it will redirect you to voting page. <br> <br> <b> Step 4</b>: Then choose the right party for the Nation.
             </p>
         </section>
-       <a class="button" href="process/results">Voting Results</a>
+
+
+<div id="timer"></div>
+<div id="results"> <a class="button" href="process/results">Voting Results</a></div>
+
         </section>
     </main>
 
 
+<script>
+    // Set the end date for voting (one day from now)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 1);
+
+    // Update the countdown every second
+    const timerElement = document.getElementById('timer');
+    const resultsElement = document.getElementById('results');
+
+    function updateTimer() {
+        const now = new Date();
+        const timeDifference = endDate - now;
+
+        if (timeDifference > 0) {
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            timerElement.innerHTML = `Time left: ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+            // Voting has ended, display results
+            timerElement.style.display = 'none';
+            resultsElement.style.display = 'block';
+            resultsElement.innerHTML = 'Voting has ended. Displaying results...';
+
+            // You can add logic here to fetch and display the voting results
+        }
+    }
+
+    // Initial call to set up the timer
+    updateTimer();
+
+    // Update the timer every second
+    setInterval(updateTimer, 1000);
+</script>
 </body>
 </html>
