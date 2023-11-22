@@ -100,42 +100,7 @@ main {
             <p><b>Step 1</b>: Click on the above verify button, it will redirect you on verification page. <br> <br> <b>Step 2</b>: Enter your VoterId to get verified for voting. <br> <br> <b>Step 3</b>: After successfull verification it will redirect you to voting page. <br> <br> <b> Step 4</b>: Then choose the right party for the Nation.
             </p>
         </section>
-        {% if check %}
-          <table id="results">
-
-
-            <thead>
-            <tr>
-
-                <th>Party</th>
-                <th>Candidate Name</th>
-                <th>Vote</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            {% for opposition in opposition_list %}
-            <tr>
-                <td>{{ opposition.party_name }}</td>
-                <td>{{ opposition.candidate_name}}</td>
-                <td>
-                    <form method="post" action="{% url 'vote' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="voter_id" value="{{ voter_id }}">
-                        <input type="hidden" name="opposition_id" value="{{ opposition.op_id }}">
-                        <button type="submit">Vote</button>
-                    </form>
-                </td>
-
-            </tr>
-            <div>
-
-            </div>
-            {% endfor %}
-
-            </tbody>
-        </table>
-        {% end if %}
+       <a class="button" href="process/results">Voting Results</a>
         </section>
     </main>
 
