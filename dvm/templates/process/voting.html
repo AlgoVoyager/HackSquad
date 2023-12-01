@@ -3,9 +3,10 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title></title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <title>Vote</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+<!--    &lt;!&ndash; Compiled and minified CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">-->
 
     <!-- Compiled and minified JavaScript -->
 
@@ -28,43 +29,45 @@ main {
       color: black;
       font-size: 20px;
 }
-
+td{text-align:center}
+    #ps{margin:auto}
 </style>
 
-<man>
-    <nav style="height: 120px">
-        <div class="nav-wrapper orange accent-3">
-            <img src="{% static 'e-voting-logo.png' %}" alt="" height="120" width="350" style="padding-left: 250px" ;>
+    <nav >
+        <div  class="text-right p-1 bg-indigo-500 text-indigo-100">
 
-            <div class="brand-logo center"><h3 style="color: black">Election Commission Of Bharat</h3></div>
+            <h5>Welcome to the Voting Page, <span class="text-orange-300" >{{ voter_id }}!</span></h5>
+        </div>
+        <div class=" flex justify-center items-center gap-5 lg:h-44 md:h-64 bg-orange-400 ">
+            <img src="{% static 'sj.png' %}" alt="satyamev jayate"  width="70" height="100" ;>
+
+            <div class=" text-indigo-900 font-bold  lg:7xl  md:text-6xl text-4xl"><h3 >Election Commission Of Bharat</h3></div>
 
         </div>
     </nav>
-</man>
+
 <body>
 <main>
 
 
-    <div class="container">
-        <div id="card-alert" class="card light-blue lighten-5">
+    <div class="container-xl flex justify-center items-center">
 
-            <h5>Welcome to the Voting Page, {{ voter_id }}!</h5>
-        </div>
-        <table>
+        <table class="w-full sm:w-1/2 md:3/4" >
 
 
-            <thead>
+            <thead class=" border-b-4 border-indigo-500" >
             <tr>
-
+                <th>Party Symbol</th>
                 <th>Party</th>
                 <th>Candidate Name</th>
                 <th>Vote</th>
             </tr>
             </thead>
 
-            <tbody>
+            <tbody class="text-2xl">
             {% for opposition in opposition_list %}
-            <tr>
+            <tr class="border-b h-28 " >
+                <td  > <img id="ps" src="/media/{{opposition.party_symbol}}" width="40px" > </td>
                 <td>{{ opposition.party_name }}</td>
                 <td>{{ opposition.candidate_name}}</td>
                 <td>
@@ -72,16 +75,23 @@ main {
                         {% csrf_token %}
                         <input type="hidden" name="voter_id" value="{{ voter_id }}">
                         <input type="hidden" name="opposition_id" value="{{ opposition.op_id }}">
-                        <button type="submit">Vote</button>
+                        <button class="px-3 py-1 bg-orange-100 rounded-xl" type="submit">Vote</button>
                     </form>
                 </td>
-
             </tr>
-            <div>
 
-            </div>
             {% endfor %}
-
+              <tr class="border-b h-28 " >
+                <td colspan="3" >None of The Above</td>
+                <td>
+                    <form method="post" action="{% url 'vote' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="voter_id" value="{{ voter_id }}">
+                        <input type="hidden" name="opposition_id" value="NOTA">
+                        <button class="px-3 py-1 bg-orange-100 rounded-xl" type="submit">✕</button>
+                    </form>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -91,19 +101,7 @@ main {
 </body>
 
 
-<footer style="height: 70px" ; class="page-footer green darken-2">
-    <div class="brand-logo center">Election Commission of Bharat</div>
-    </div>
+<footer  class="bg-green-700 lg:h-28 md:h-28 h-32 flex justify-center items-center">
+    <div class="text-center  text-indigo-900 font-bold  lg:5xl  md:text-4xl text-2xl">Election Commission of Bharat</div>
 </footer>
-
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
-
-<script type="text/javascript" src="js/clist.js"></script>
 </html>

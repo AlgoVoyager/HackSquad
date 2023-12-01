@@ -1,4 +1,34 @@
-body {
+        footer{
+    margin: 0;
+    background: lightgray;
+border-radius: 8px;
+color: black;
+}
+
+  .fut{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.foot{
+    margin: 0;
+    color:white;
+    margin: 0;padding: 0;
+    background-color: black;
+    padding: 10px;
+
+}
+.about
+{
+    margin: 0;
+    padding:30px;
+}
+        #header{
+            display:flex;
+            justify-content:center;
+        }
+        body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
@@ -7,6 +37,7 @@ header {
     margin: 0;
     font-size: 24px;
 }
+
 main {
     text-align: center;
 }
@@ -15,10 +46,11 @@ main {
     margin-top: 0%;
     margin-bottom: 30px;
     background-color: lightgray;
-    
+
 }
 .button{
-    width: 85px;height: 37px; font-size: 20px;color: white; background-color: rgb(60, 81, 220); border-radius: 15px;
+    width: 99px;height: 45px; font-size: 16px;color: white; background-color: rgb(60, 81, 220); border-radius: 15px;
+    padding:8px
 }
 .section {
     border: 2px solid #ccc;
@@ -49,6 +81,11 @@ main {
     border-radius: 8px;
 }
 .vote-button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 20px 30px;
+    font-size: 20px;
 }
+        a{
+        text-decoration:none
+        }
+        #results{
+        display:none}

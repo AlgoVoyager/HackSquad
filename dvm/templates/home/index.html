@@ -1,108 +1,17 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Voting System</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        footer{
-    margin: 0;
-    background: lightgray;
-border-radius: 8px;
-color: black;
-}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
-  .fut{
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-}
-
-.foot{
-    margin: 0;
-    color:white;
-    margin: 0;padding: 0;
-    background-color: black;
-    padding: 10px;
-
-}
-.about
-{
-    margin: 0;
-    padding:30px;
-}
-        #header{
-            display:flex;
-            justify-content:center;
-        }
-        body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-header {
-    text-align: center;
-    margin: 0;
-    font-size: 24px;
-}
-main {
-    text-align: center;
-}
-
-.election-info {
-    margin-top: 0%;
-    margin-bottom: 30px;
-    background-color: lightgray;
-
-}
-.button{
-    width: 99px;height: 45px; font-size: 16px;color: white; background-color: rgb(60, 81, 220); border-radius: 15px;
-    padding:8px
-}
-.section {
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-}
-.section1 {
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    background-color: rgb(255, 166, 0);
-}
-.section2 {
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    background-color: green;
-}
-.candidate {
-    display: inline-block;
-    margin: 10px;
-}
-.candidate img {
-    max-width: 150px;
-    border-radius: 8px;
-}
-.vote-button {
-    padding: 20px 30px;
-    font-size: 20px;
-}
-        a{
-        text-decoration:none
-        }
-        #results{
-        display:none}
-    </style>
 </head>
 <body>
-
-    <header id="header">
-        <h1 >Election Commission of India</h1>
+    <header id="header" >
+        <img src="{% static 'sj.png' %}" alt="satyamev jayate"  width="70" height="100" ;>
+        <h1 id="htext">Election Commission of Bharat</h1>
     </header>
 
     <main>

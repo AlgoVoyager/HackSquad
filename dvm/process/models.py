@@ -19,6 +19,7 @@ class voter_Details(models.Model):
 
 class oppositions(models.Model):
     op_id = models.CharField(primary_key=True,max_length=20)
+    party_symbol= models.ImageField(upload_to="partySymbol",default='default.jpg')
     party_name= models.CharField(max_length=255)
     candidate_name= models.CharField(max_length=255)
     vote_count= models.IntegerField(default=0)
